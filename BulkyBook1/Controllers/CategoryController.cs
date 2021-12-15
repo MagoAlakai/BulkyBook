@@ -10,7 +10,10 @@
         public IActionResult Index()
         {
             IEnumerable<Category> objCategoryList = _db.Categories;
-            return View( objCategoryList );
+            IEnumerable<CategoryViewModel> viewObjCategoryList;
+            viewObjCategoryList = objCategoryList.Adapt<IEnumerable<CategoryViewModel>>();
+
+            return View(viewObjCategoryList);
         }
 
         //CREATE
@@ -45,11 +48,14 @@
                 return NotFound();
             }
             var categoryFromDb = _db.Categories.Find(id);
+            
             if (categoryFromDb is null)
             {
                 return NotFound();
             }
-            return View(categoryFromDb);
+
+            var viewCategory = categoryFromDb.Adapt<CategoryViewModel>();
+            return View(viewCategory);
         }
 
         //Post
@@ -81,7 +87,8 @@
             {
                 return NotFound();
             }
-            return View(categoryFromDb);
+            var viewCategory = categoryFromDb.Adapt<CategoryViewModel>();
+            return View(viewCategory);
         }
 
         //Post

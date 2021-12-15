@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Category>
+﻿@model IEnumerable<BulkyBook1.ViewModels.CategoryViewModel>;
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -30,7 +31,10 @@
             </tr>
         </thead>
         <tbody>
-        @foreach(var category in Model)
+        @{
+            var CategoryList = @Model;
+        }
+        @foreach(var category in CategoryList)
         {
             <tr>
                 <td width="40%">

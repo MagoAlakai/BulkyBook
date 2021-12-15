@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Mapster" Version="7.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
@@ -25,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BulkyBook1.DataAccess\BulkyBook1.DataAccess.csproj" />
+    <ProjectReference Include="..\BulkyBook1.ViewModels\BulkyBook1.ViewModels.csproj" />
   </ItemGroup>
 
 	</Project>
